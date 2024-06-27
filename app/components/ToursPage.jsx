@@ -7,8 +7,8 @@ import { getAllTours } from '../utils/action'
 const ToursPage = () => {
     const [searchValue, setSearchValue] = useState('')
     const {data, isPending} = useQuery({
-        queryKey: ['tours'],
-        queryFn: () => getAllTours(),
+        queryKey: ['tours', searchValue],
+        queryFn: () => getAllTours(searchValue),
     })
   return (
     <>
