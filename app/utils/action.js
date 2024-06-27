@@ -106,3 +106,12 @@ export const getExistingTour = async ({ city, country }) => {
     })
     return tours;
   }
+
+
+  export const getSingleTour = async () =>{
+    return prisma.tour.findUnique({
+        where:{
+            id,
+        },
+    });
+  }
